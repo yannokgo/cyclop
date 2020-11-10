@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script>
+    <link rel="stylesheet" href="../styles/prism.css">
+    <style>
+        #show_hide_theme {
+            display: none;
+            position: relative;
+        }
+        .hub_color_dark {
+            background-color: rgb(49, 49, 49);
+        }
+        .hub_color_light {
+            background-color: rgb(255, 255, 255);
+        }
+                
+
+    </style>
+    <script>
+        function showHide() {
+          var x = document.getElementById("show_hide_theme");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+          var y = document.getElementById("show_hide_button");
+          if (y.style.display === "none") {
+            y.style.display = "block";
+          } else {
+            y.style.display = "none";
+          }
+        
+        }
+  
+    </script>    
+
+    <title>Hello!</title>
+</head> 
+<body id="body">
+    <style>
+        body {
+            background-color: rgb(110, 110, 110);
+        }
+
+    </style>
+    <button id="show_hide_button" onclick="showHide()">Themmy!</button>
+
+    <div id="show_hide_theme">
+    <button onclick="
+      document.getElementById('body').className = 'hub_color_dark';">
+
+      Dark Theme.
+    
+    </button>
+    <button onclick="
+      document.getElementById('body').className = 'hub_color_light';">
+    
+      Light Theme.
+  
+    </button>
+    <button onclick="
+      document.getElementById('body').className = '';">
+    
+      Gray Theme.
+  
+    </button>
+    </div>
+    <hr class="hide">  
+<h1>SSH</h1>
+
+<p>Install, Enable, Start</p>
+
+<pre><code class="language-bash">sudo apt-get install openssh-server
+# /sbin/service sshd help
+Usage: /etc/init.d/sshd {start|stop|restart|reload|condrestart|status}
+</code></pre>
+
+<p>Connect</p>
+
+<pre><code class="language-bash">ssh user@server-name
+</code></pre>
+
+<h2>SSH Server</h2>
+
+<pre><code class="language-bash">sudo apt-get install openssh-server 
+</code></pre>
+
+<p><strong>Back-Up</strong></p>
+
+<p>First, make a backup of your sshd_config file by copying it to your home directory, or by making a read-only copy in /etc/ssh</p>
+
+<pre><code class="language-bash">sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.factory-defaults
+sudo chmod a-w /etc/ssh/sshd_config.factory-defaults
+</code></pre>
+
+<p>Revert</p>
+
+<pre><code class="language-bash">sudo gedit /etc/ssh/sshd_config
+</code></pre>
+
+<p>Disable password authentication in <code>sshd_config</code> replace by the second</p>
+
+<pre><code>#PasswordAuthentication yes
+PasswordAuthentication no
+</code></pre>
+
+<p><strong>Generating Keys</strong> Client-side. Create your public and private SSH keys</p>
+
+<pre><code class="language-bash">mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa -b 4096
+</code></pre>
+
+<p><a href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys" title="Ubuntu.com">more on ubuntu.com</a></p>
+
+<h2>ufw - Firewall ports</h2>
+
+<pre><code class="language-bash">sudo ufw status
+sudo ufw status verbose
+    
+
+sudo ufw enable
+sudo ufw allow 22/tcp comment 'Open port ssh tcp port 22'
+</code></pre>
+
+<p>Open incoming SSH but deny connections from an IP address that has attempted to initiate 6 or more connections in the last 30 seconds.</p>
+
+<pre><code class="language-bash">$ sudo ufw limit ssh
+</code></pre>
+
+<h2>Credits</h2>
+
+<p><a href="https://www.cyberciti.biz/faq/ufw-allow-incoming-ssh-connections-from-a-specific-ip-address-subnet-on-ubuntu-debian/" title="Cyberciti.biz">Open ssh 22/tcp using ufw</a></p>
+
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../styles/prism.js"></script>
+</body>
+</html>

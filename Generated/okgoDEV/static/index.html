@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/menu.css">
+
+
+
+    <link rel="stylesheet" href="./styles/prism.css">
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <input type="checkbox" class="toggler" id="checkbox">
+        <div class="hamburger">
+            <div></div>
+        </div>
+        <header id="header" class="titled">
+            <br>
+       
+            <style>a, a:visited {text-decoration:none;color:darkgray;}
+            </style>
+            <a href="">okgoDEV</a>
+        </header>
+
+        <nav id="nav">
+
+          <details>
+            <summary>Cheat Sheets</summary>
+            
+            <button onclick="buttonFast('markdown')">Markdown</button>
+            
+            <button onclick="buttonFast('sass')">Sass</button>
+            
+          </details>
+ 
+          <details>
+            <summary>Networks</summary>
+            
+            <button onclick="buttonFast('networks')">General</button>
+            
+          </details>
+          
+
+          
+          <details>
+            <summary>Web Development</summary>
+            <button onclick="buttonFast('webdev')">Sass</button>
+          </details>
+          
+          <details>
+            <summary>Linux</summary>
+            <button onclick="buttonFast('linux')">General Bash</button>
+            <button onclick="buttonFast('ssh')">SSH</button>
+          </details>
+          
+          <details>
+            <summary>Goodies</summary>
+            <button onclick="buttonFast('goodies')">Goodies</button>
+          </details>
+          
+          
+
+        </nav>
+        <main id="main">
+            <div id="mainDIV">
+                <div id="main_doc" style="visibility:hidden;"><object data="./html/main.html" type="text/html"></object></div>
+              </div>
+        </main>
+        <aside id="aside">
+
+	<a onclick="linkFast('https://linuxcommandlibrary.com/')"><img src="https://linuxcommandlibrary.com/images/logo.png" style="width:100px;height:100px;"/></a>
+	<a onclick="linkFast('https://hea-www.harvard.edu/~fine/Tech/vi.html')"><img src="./styles/vimlogo.png" /></a>
+	<a href="https://www.pdq.com/powershell/"><img src="https://dirteam.com/dave/wp-content/uploads/sites/4/2020/10/PowerShell_Core_6.0_icon-256x210.png" style="width:100px;height:100px;"/></a>
+	<a onclick="linkFast('https://ss64.com/')">SS64</a>
+	<a onclick="linkFast('https://www.online-toolz.com/')">online tools</a>
+        </aside>
+
+        <footer id="footer">
+
+          <section>
+            <form action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+              <input autocomplete="on" class="form-control search" name="q" placeholder="Google Search" required="required"  type="text">
+              <button class="button" type="submit">Search</button>
+            </form>
+          </section>
+
+        </footer>
+
+    </div>
+    <script>document.getElementById('mainDIV').innerHTML = document.getElementById('main_doc').innerHTML;</script>
+    <script src="./styles/script.js"></script>
+    <script src="./styles/prism.js"></script>
+</body>
+
+</html>

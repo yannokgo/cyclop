@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script>
+    <link rel="stylesheet" href="../styles/prism.css">
+    <style>
+        #show_hide_theme {
+            display: none;
+            position: relative;
+        }
+        .hub_color_dark {
+            background-color: rgb(49, 49, 49);
+        }
+        .hub_color_light {
+            background-color: rgb(255, 255, 255);
+        }
+                
+
+    </style>
+    <script>
+        function showHide() {
+          var x = document.getElementById("show_hide_theme");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+          var y = document.getElementById("show_hide_button");
+          if (y.style.display === "none") {
+            y.style.display = "block";
+          } else {
+            y.style.display = "none";
+          }
+        
+        }
+  
+    </script>    
+
+    <title>Hello!</title>
+</head> 
+<body id="body">
+    <style>
+        body {
+            background-color: rgb(110, 110, 110);
+        }
+
+    </style>
+    <button id="show_hide_button" onclick="showHide()">Themmy!</button>
+
+    <div id="show_hide_theme">
+    <button onclick="
+      document.getElementById('body').className = 'hub_color_dark';">
+
+      Dark Theme.
+    
+    </button>
+    <button onclick="
+      document.getElementById('body').className = 'hub_color_light';">
+    
+      Light Theme.
+  
+    </button>
+    <button onclick="
+      document.getElementById('body').className = '';">
+    
+      Gray Theme.
+  
+    </button>
+    </div>
+    <hr class="hide">  
+<h1>Sass / Scss</h1>
+
+<p>compile and watch</p>
+
+<pre><code class="language-bash">sass --watch styles.scss styles.css
+</code></pre>
+
+<p>install</p>
+
+<pre><code class="language-bash">npm install -g sass
+</code></pre>
+
+<p><a href="https://sass-lang.com/guide">More</a></p>
+
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../styles/prism.js"></script>
+</body>
+</html>

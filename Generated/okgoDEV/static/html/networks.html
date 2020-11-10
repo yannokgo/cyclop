@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/go.min.js"></script>
+    <link rel="stylesheet" href="../styles/prism.css">
+    
+        <style>
+          body {
+              background-color: rgb(59, 59, 59);
+          }
+          * {
+            color: snow;
+          }
+  
+      </style>
+
+
+
+<title>networks | okgo.DEV</title></head><body id='body'><h1>Networks</h1>
+
+<h2>Netplan</h2>
+
+<h4>Example</h4>
+
+<pre><code class="language-yaml"># This is the network config written by 'yannokgo'
+network:
+  renderer: networkd
+  ethernets:
+    ens33:
+      addresses: [192.168.19.31/24]
+      gateway4: 192.168.19.2
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+        search: [labo.local]
+      dhcp4: false
+      dhcp6: false
+  version: 2
+</code></pre>
+
+<h4>usage</h4>
+
+<pre><code class="language-bash">netplan generate
+netplan try
+netplan apply
+</code></pre>
+
+<pre><code>test
+</code></pre>
+
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="../styles/prism.js"></script>
+</body>
+</html>
